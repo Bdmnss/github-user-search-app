@@ -21,7 +21,7 @@ const Main: React.FC<{ user: User | null }> = ({ user }) => {
             @{user?.login}
           </a>
           <p className="text-[1.3rem] text-white">
-            Joined {user?.created_at.slice(0, 10)}
+            Joined {user?.created_at?.slice(0, 10)}
           </p>
         </div>
       </div>

@@ -17,7 +17,9 @@ function App() {
     try {
       const response = await fetch(`https://api.github.com/users/${userName}`);
       const data = await response.json();
-      setUser(data);
+      if (response.status === 200) {
+        setUser(data);
+      }
       setStatus(response.status);
     } catch (error) {
       console.error(error);
@@ -25,14 +27,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen min-w-screen bg-[#141d2f]">
-      <div className="px-[2.4rem] pt-[3.1rem] pb-[7.9rem]">
-        <Header />
+    <div
+      className={`min-h-screen min-w-screen bg-[#141d2f] px-[2.4rem] pt-[3.1rem] pb-[7.9rem]`}
+    >
+      <Header />
 
-        <Search setUserName={setUserName} getUser={getUser} status={status} />
+      <Search setUserName={setUserName} getUser={getUser} status={status} />
 
-        <Main user={user} />
-      </div>
+      <Main user={user} />
     </div>
   );
 }
