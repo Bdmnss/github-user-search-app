@@ -7,6 +7,11 @@ export default {
         "main-font": ["Space Mono"],
         inherit: "inherit",
       },
+      screens: {
+        mini: "0px",
+        desktop: "1440px",
+        monitor: "1900px",
+      },
     },
   },
   plugins: [],

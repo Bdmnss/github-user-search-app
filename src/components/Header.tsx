@@ -3,7 +3,7 @@ const Header: React.FC<{
   setDark: React.Dispatch<React.SetStateAction<boolean>>;
 }> = ({ dark, setDark }) => {
   return (
-    <div className="flex justify-between mb-[3.6rem]">
+    <div className="flex justify-between items-center mb-[3.6rem]">
       <h1
         className={`text-[2.6rem] font-bold ${
           dark ? "text-white" : "text-[#222731]"

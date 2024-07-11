@@ -29,19 +29,25 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen min-w-screen px-[2.4rem] pt-[3.1rem] pb-[7.9rem]
-        ${dark ? "bg-[#141d2f]" : "bg-[#f6f8ff]"}`}
+      className={`min-h-screen min-w-screen ${
+        dark ? "bg-[#141d2f]" : "bg-[#f6f8ff]"
+      }`}
     >
-      <Header dark={dark} setDark={setDark} />
+      <div
+        className="flex flex-col justify-center px-[2.4rem] pt-[3.1rem] pb-[7.9rem] md:min-h-[100vh]
+      md:px-[9.8rem] desktop:px-[35.5rem] 2xl:px-[40rem]"
+      >
+        <Header dark={dark} setDark={setDark} />
 
-      <Search
-        setUserName={setUserName}
-        getUser={getUser}
-        status={status}
-        dark={dark}
-      />
+        <Search
+          setUserName={setUserName}
+          getUser={getUser}
+          status={status}
+          dark={dark}
+        />
 
-      <Main user={user} dark={dark} />
+        <Main user={user} dark={dark} />
+      </div>
     </div>
   );
 }

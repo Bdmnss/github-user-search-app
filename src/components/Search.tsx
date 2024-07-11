@@ -20,13 +20,13 @@ const Search: React.FC<TSearch> = ({ setUserName, getUser, status, dark }) => {
           dark
             ? "text-white placeholder:text-white "
             : "text-[#222731] placeholder:text-[#4b6a9b]"
-        }`}
+        } md:text-[1.8rem] md:ml-[2.4rem]`}
         placeholder="Search GitHub username…"
         onChange={(event) => setUserName(event.target.value)}
       />
       <button
         className="bg-[#0079ff] px-[1.8rem] py-[1.2rem] rounded-[1rem] text-[1.6rem] text-white
-          font-bold ml-auto hover:bg-[#60abff]"
+          font-bold ml-auto hover:bg-[#60abff] md:px-[2.5rem]"
         onClick={getUser}
       >
         Search
