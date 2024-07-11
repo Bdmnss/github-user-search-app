@@ -1,16 +1,35 @@
-const Header: React.FC = () => {
+const Header: React.FC<{
+  dark: boolean;
+  setDark: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ dark, setDark }) => {
   return (
     <div className="flex justify-between mb-[3.6rem]">
-      <h1 className="text-[2.6rem] font-bold text-white">devfinder</h1>
-      <div className="flex items-center gap-[1.6rem] cursor-pointer group">
+      <h1
+        className={`text-[2.6rem] font-bold ${
+          dark ? "text-white" : "text-[#222731]"
+        }`}
+      >
+        devfinder
+      </h1>
+      <div
+        className="flex items-center gap-[1.6rem] cursor-pointer group"
+        onClick={() => setDark(!dark)}
+      >
         <p
-          className="text-[1.3rem] tracking-[2.5px] font-bold text-white 
-            group-hover:text-[#90a4d4]"
+          className={`text-[1.3rem] tracking-[2.5px] font-bold ${
+            dark
+              ? "text-white group-hover:text-[#90a4d4]"
+              : "text-[#4b6a9b] group-hover:text-[#222731]"
+          } `}
         >
           LIGHT
         </p>
         <svg
-          className="w-8 h-8 text-white group-hover:text-[#90a4d4]"
+          className={`w-8 h-8 ${
+            dark
+              ? "text-white group-hover:text-[#90a4d4]"
+              : "text-[#4b6a9b] group-hover:text-[#222731]"
+          }`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >

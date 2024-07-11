@@ -8,6 +8,7 @@ function App() {
   const [user, setUser] = useState<User | null>(null);
   const [status, setStatus] = useState<number>(200);
   const [userName, setUserName] = useState<string>("octocat");
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     getUser();
@@ -28,13 +29,19 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen min-w-screen bg-[#141d2f] px-[2.4rem] pt-[3.1rem] pb-[7.9rem]`}
+      className={`min-h-screen min-w-screen px-[2.4rem] pt-[3.1rem] pb-[7.9rem]
+        ${dark ? "bg-[#141d2f]" : "bg-[#f6f8ff]"}`}
     >
-      <Header />
+      <Header dark={dark} setDark={setDark} />
 
-      <Search setUserName={setUserName} getUser={getUser} status={status} />
+      <Search
+        setUserName={setUserName}
+        getUser={getUser}
+        status={status}
+        dark={dark}
+      />
 
-      <Main user={user} />
+      <Main user={user} dark={dark} />
     </div>
   );
 }

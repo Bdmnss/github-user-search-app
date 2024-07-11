@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "main-font": ["Space Mono", "monospace"],
+        "main-font": ["Space Mono"],
+        inherit: "inherit",
       },
     },
   },
