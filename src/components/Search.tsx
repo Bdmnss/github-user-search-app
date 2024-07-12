@@ -1,11 +1,18 @@
 type TSearch = {
   setUserName: React.Dispatch<React.SetStateAction<string>>;
+  setStatus: React.Dispatch<React.SetStateAction<number>>;
   getUser: () => Promise<void>;
   status: number;
   dark: boolean;
 };
 
-const Search: React.FC<TSearch> = ({ setUserName, getUser, status, dark }) => {
+const Search: React.FC<TSearch> = ({
+  setUserName,
+  setStatus,
+  getUser,
+  status,
+  dark,
+}) => {
   return (
     <div
       className={`flex items-center py-[7px] pl-[1.6rem] pr-[7px] 
@@ -22,7 +29,10 @@ const Search: React.FC<TSearch> = ({ setUserName, getUser, status, dark }) => {
             : "text-[#222731] placeholder:text-[#4b6a9b]"
         } md:text-[1.8rem] md:ml-[2.4rem]`}
         placeholder="Search GitHub username…"
-        onChange={(event) => setUserName(event.target.value)}
+        onChange={(event) => {
+          setUserName(event.target.value);
+          setStatus(200);
+        }}
       />
       <button
         className="bg-[#0079ff] px-[1.8rem] py-[1.2rem] rounded-[1rem] text-[1.6rem] text-white
@@ -34,7 +44,7 @@ const Search: React.FC<TSearch> = ({ setUserName, getUser, status, dark }) => {
       {status !== 200 && (
         <p
           className="absolute text-center right-[11rem] text-[#f74646] bg-inherit text-[1.5rem]
-          font-bold"
+          font-bold md:right-[12rem]"
         >
           No results
         </p>

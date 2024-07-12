@@ -46,6 +46,7 @@ const Main: React.FC<{ user: User | null; dark: boolean }> = ({
               {user?.name ? user?.name : "Name Not Available"}
             </p>
             <a
+              target="_blank"
               href={user?.html_url}
               className="text-[1.3rem] text-[#0079ff] md:text-[1.6rem]"
             >
@@ -166,7 +167,7 @@ const Main: React.FC<{ user: User | null; dark: boolean }> = ({
               </g>
             </svg>
             {user?.blog ? (
-              <a href={user?.blog} className="text-[1.3rem]">
+              <a target="_blank" href={user?.blog} className="text-[1.3rem]">
                 {user?.blog}
               </a>
             ) : (

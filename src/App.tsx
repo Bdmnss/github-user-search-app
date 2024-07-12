@@ -41,6 +41,7 @@ function App() {
 
         <Search
           setUserName={setUserName}
+          setStatus={setStatus}
           getUser={getUser}
           status={status}
           dark={dark}
