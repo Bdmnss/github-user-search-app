@@ -20,6 +20,7 @@ function App() {
       const data = await response.json();
       if (response.status === 200) {
         setUser(data);
+        setUserName("");
       }
       setStatus(response.status);
     } catch (error) {
@@ -45,6 +46,7 @@ function App() {
           getUser={getUser}
           status={status}
           dark={dark}
+          userName={userName}
         />
 
         <Main user={user} dark={dark} />

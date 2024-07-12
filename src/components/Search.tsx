@@ -4,6 +4,7 @@ type TSearch = {
   getUser: () => Promise<void>;
   status: number;
   dark: boolean;
+  userName: string;
 };
 
 const Search: React.FC<TSearch> = ({
@@ -12,6 +13,7 @@ const Search: React.FC<TSearch> = ({
   getUser,
   status,
   dark,
+  userName,
 }) => {
   return (
     <div
@@ -22,6 +24,7 @@ const Search: React.FC<TSearch> = ({
     >
       <img src="images/icon-search.svg" alt="search icon" />
       <input
+        value={userName}
         type="text"
         className={`w-[100%] bg-inherit ml-[9px] mr-[7px] text-[1.3rem] border-none outline-none ${
           dark
